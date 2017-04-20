@@ -1,4 +1,4 @@
 chw2g
-Gopkg.toml
+/*Gopkg.toml <- need this manifest, dont ignore*/
 Gopkg.lock
 vendor/

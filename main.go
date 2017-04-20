@@ -28,12 +28,13 @@ func start(w http.ResponseWriter, r *http.Request) {
 	family, osfamily, devfamily := agent(r)
 	switch ua := osfamily; ua {
 	case "iOS", "Android":
-		fmt.Fprintf(w, "iOS, yo \n%s \n%s \n%s", osfamily, family, devfamily)
+		fmt.Fprintf(w, "iOS or Android, yo-seph \n%s \n%s \n%s", osfamily, family, devfamily)
 	default:
 		fmt.Fprintf(w, "Whatevs \n%s \n%s \n%s", osfamily, family, devfamily)
 	}
 }
 
+// login just prints to stdout, change later
 func login(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("Eastern:", r.PostFormValue("eastern"))
 	fmt.Println("Central:", r.PostFormValue("central"))
