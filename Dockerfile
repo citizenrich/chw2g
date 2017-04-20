@@ -1,4 +1,4 @@
-FROM golang:1.8-alpine
+FROM golang:1.8.1-alpine
 
 # Package dependencies
 RUN apk add --update --no-cache git libc-dev
@@ -15,30 +15,6 @@ RUN dep ensure -v
 # Compile code
 RUN go build
 
-RUN ["chw2g"]
+EXPOSE 8000
 
-
-# FROM golang:1.8.1-alpine
-
-# WORKDIR /app
-
-# ADD . /go/src/github.com/citizenrich/chw2g/
-
-# ADD $GOPATH/src/github.com/ua-parser/uap-go /go/src/github.com/ua-parser/uap-go
-# RUN go install github.com/citizenrich/chw2g
-# CMD ["/go/bin/chw2g"]
-# EXPOSE 8000
-
-# FROM golang:1.8.1-alpine
-#
-# WORKDIR /app
-#
-# ADD $GOPATH/src/github.com/citizenrich/chw2g /go/src/github.com/citizenrich/chw2g
-#
-# RUN env GOOS=linux GOARCH=amd64 go build github.com/citizenrich/chw2g
-#
-# # RUN wget https://raw.githubusercontent.com/ua-parser/uap-core/master/regexes.yaml
-#
-# EXPOSE 8000
-#
-# CMD ["chw2g"]
+RUN ["/go/src/github.com/citizenrich/chw2g/chw2g"]
