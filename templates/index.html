@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {background-color: rgba(21, 75, 120, 0.87);}
+    h1   {color: black;}
+    p    {color: white;}
+
+    input[type=button], input[type=submit], input[type=reset] {
+        background-color: #02ac09;
+        width: 40%;
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-decoration: none;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+
+  </style>
+</head>
+<body>
+
+<h1>Welcome to the CHEW system.</h1>
+
+<h2>Choose your position</h2>
+
+<div class="custom-radio">
+  <div>
+    <input type="radio" id="chw" name="position" value="chw">
+    <label for="chw"><span></span>CHW</label>
+  </div>
+  <div>
+    <input type="radio" id="midwife" name="position" value="midwife">
+    <label for="midwife"><span></span>Midwife</label>
+  </div>
+</div>
+
+<h2>Choose only one district from the region.</h2>
+
+<div style="border: 4px black;">
+  <form action="/login" method="post">
+    <h3>Eastern</h3>
+    <select name="eastern">
+      <option value="not">Not selected</option>
+      <option value="saab">Saab</option>
+      <option value="fiat">Fiat</option>
+      <option value="audi">Audi</option>
+    </select>
+
+    <h3>Central</h3>
+    <select name="central">
+      <option value="not">Not selected</option>
+      <option value="frank">Frank</option>
+      <option value="bob">Bob</option>
+      <option value="smith">Smith</option>
+    </select>
+
+    <h3>Northern</h3>
+    <select name="northern">
+      <option value="not">Not selected</option>
+      <option value="frank">Frank</option>
+      <option value="bob">Bob</option>
+      <option value="smith">Smith</option>
+    </select>
+
+    <h3>Western</h3>
+    <select name="western">
+      <option value="not">Not selected</option>
+      <option value="frank">Frank</option>
+      <option value="bob">Bob</option>
+      <option value="smith">Smith</option>
+    </select>
+</div>
+
+  <br><br>
+  <input type="submit">
+</form>
+
+</body>
+</html>
