@@ -1,9 +1,9 @@
 FROM golang:1.8.1-alpine
 # run from the local, updated branch to be dockerized.
 # golang:latest is 700MB, instead use alpine which is 300MB
+# this approach provides all the cgo needs, certificates
 
 RUN apk add --update --no-cache git libc-dev
-
 
 # install dependency tool
 RUN go get github.com/golang/dep && go install github.com/golang/dep/cmd/dep
@@ -28,8 +28,11 @@ RUN go install github.com/citizenrich/chw2g
 # Run the bookings microservice when the container starts.
 ENTRYPOINT /go/bin/chw2g
 
-# Service listens on port 8080. Leave uncommented to set port in run command.
+# FYI service main.go listens on port 8000.
+# Leave uncommented to set port in publish run option for more flexibility
 # EXPOSE 8000
 
+# to build and run:
 # docker build -t chw2g .
 # docker run -it --rm --name instance4 -p 8000:8000 chw2g chw2g
+# can send env variable in run command
